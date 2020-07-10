@@ -1,0 +1,37 @@
+{
+  "name": "graphql-express-postgres-server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "lib/server.js",
+  "scripts": {
+    "clean": "rm -rf lib/*",
+    "build": "tsc",
+    "dev": "nodemon",
+    "1dev": "nodemon --exec ts-node lib/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.15.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "pg": "^8.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.30.0",
+    "@typescript-eslint/parser": "2.30.0",
+    "@typescript-eslint/typescript-estree": "2.30.0",
+    "concurrently": "3.6.1",
+    "eslint": "6.8.0",
+    "eslint-plugin-jest": "21.20.2",
+    "@babel/core": "7.10.4",
+    "@babel/node": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@types/cors": "2.8.6",
+    "@types/express": "4.17.7",
+    "@types/node": "14.0.20",
+    "nodemon": "2.0.4",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.6"
+  }
+}
