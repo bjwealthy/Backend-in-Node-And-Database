@@ -1,8 +1,8 @@
 {
-  "name": "graphql-express-postgres-server",
+  "name": "backend-in-node-and-database",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "lib/server.js",
+  "main": "src/server.ts",
   "scripts": {
     "clean": "rm -rf lib/*",
     "build": "tsc",
