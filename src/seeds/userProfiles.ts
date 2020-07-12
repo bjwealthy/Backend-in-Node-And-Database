@@ -3,7 +3,7 @@ import userProfiles from '../seedData/userProfiles'
 
 export async function seed(knex: Knex): Promise<any> {
   // Deletes ALL existing entries
-  return knex("userProfile").del()
+  return await knex("userProfile").del()
     .then(() => {
       // Inserts seed entries
       return knex("userProfile").insert(userProfiles);
