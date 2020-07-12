@@ -1,2 +1,2 @@
-# graphql-express-postgres-server
-Express server with Graphql and  Postgres with Knex
+# Express-Postgres-Knex-server
+Express server with Postgres and Knex
