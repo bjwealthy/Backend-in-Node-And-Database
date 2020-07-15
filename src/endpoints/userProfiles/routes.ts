@@ -1,12 +1,12 @@
 import express, { Router } from 'express';
 
-import userProfiles from './queries';
+import { Queries } from './queries';
 
 const router: Router = express.Router();
 
 router.get('/', async (req, res) => {
   try {
-    const profiles: any[] = await userProfiles.getAllUserProfiles();
+    const profiles: any[] = await Queries.getAllUserProfiles();
 
     return res.status(200).json(profiles);
 
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    const profile: any[] = await userProfiles.getUserProfileId(id);
+    const profile: any[] = await Queries.getUserProfileById(id);
 
     if (profile.length < 1) {
 
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const profile = await userProfiles.addUserProfile(req.body);
+    const profile = await Queries.addUserProfile(req.body);
     res.status(201).json(profile)
 
   } catch (error) {
@@ -53,10 +53,10 @@ router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    const profile = await userProfiles.getUserProfileId(id);
+    const profile = await Queries.getUserProfileById(id);
 
     if (!(profile.length < 1)) {
-      await userProfiles.deleteUserProfileById(id);
+      await Queries.deleteUserProfileById(id);
       res.status(200).json({ message: 'User Profile removed Successfully' });
     } else {
       res.status(404).json({ message: 'User Profile not found' })
@@ -71,7 +71,7 @@ router.delete('/:id', async (req, res) => {
 //   try {
 //     const { id } = req.body;
 
-//     const profile = await userProfiles.getUserProfileId(id);
+//     const profile = await userProfiles.getUserProfileById(id);
 
 //     console.log('PROFILE', profile);
 
