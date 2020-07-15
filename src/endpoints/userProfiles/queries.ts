@@ -1,12 +1,12 @@
 import knex from '../../config/knex';
 
-export default {
+export const Queries = {
   getAllUserProfiles: async () => {
     const userProfiles = await knex('userProfile');
     return userProfiles
   },
-  getUserProfileId: async id => {
-    return await knex('userProfile').where({ id })
+  getUserProfileById: async id => {
+    return await knex('userProfile').where({ id }) //first();
   },
   addUserProfile: async userProfile => {
     return await knex('userProfile').insert(userProfile).returning('*')
