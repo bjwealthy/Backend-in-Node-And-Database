@@ -5,9 +5,14 @@ export const Queries = {
     const userProfiles = await knex('userProfile');
     return userProfiles
   },
-  getUserProfileById: async id => {
-    return await knex('userProfile').where({ id }) //first();
+  getUserProfileById: async (id: number) => {
+    const userProfile = await knex('userProfile').where({ id }).first();
+
+    console.log('userProfile', userProfile);
+
+    return userProfile;
   },
+
   addUserProfile: async userProfile => {
     return await knex('userProfile').insert(userProfile).returning('*')
   },
