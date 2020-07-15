@@ -10,8 +10,6 @@ export const resolvers = {
     },
 
     profile: async (root: any, args: { id: number }) => {
-      console.log(args);
-
       const profile = await Queries.getUserProfileById(args.id);
       return profile;
     }

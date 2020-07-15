@@ -7,9 +7,6 @@ export const Queries = {
   },
   getUserProfileById: async (id: number) => {
     const userProfile = await knex('userProfile').where({ id }).first();
-
-    console.log('userProfile', userProfile);
-
     return userProfile;
   },
 
