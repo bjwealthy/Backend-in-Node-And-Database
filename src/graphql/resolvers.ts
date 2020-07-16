@@ -35,6 +35,10 @@ export const resolvers = {
     deleteProfileById: async (root: any, args: { id: number }) => {
       const del = await Queries.deleteUserProfileById(args.id)
       return del
+    },
+    deleteProfileByEmail: async (root: any, args: { email: string }) => {
+      const del = await Queries.deleteUserProfileByEmail(args.email)
+      return del
     }
   },
 }

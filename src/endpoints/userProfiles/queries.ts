@@ -20,6 +20,9 @@ export const Queries = {
   deleteUserProfileById: async id => {
     return await knex('userProfile').where({ id }).del().returning('*');
   },
+  deleteUserProfileByEmail: async email => {
+    return await knex('userProfile').where({ email }).del().returning('*');
+  },
   updateUserProfileById: async id => {
     return await knex('userProfile').where({ id }).update({})
   }
