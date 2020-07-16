@@ -16,20 +16,15 @@ export const resolvers = {
   },
 
   Mutation: {
-    createProfile: async (root: any, args: UserProfileQueryInterface) => {
+    createProfile: async (root: any, payload: UserProfileQueryInterface) => {
       await Queries.addUserProfile([
         {
-          id: args.id,
-          name: args.name,
-          email: args.email,
-          phone: args.phone
+          ...payload
         }
       ]);
 
       const newProfile = {
-        name: args.name,
-        email: args.email,
-        phone: args.phone
+        ...payload
       };
       return newProfile;
     },
