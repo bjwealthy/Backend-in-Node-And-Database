@@ -20,5 +20,13 @@ type Mutation {
     email: String
     phone: String
   ): Profile!
+
+  deleteProfileById(
+    id: ID
+  ): Profile
+
+  deleteProfileByEmail(
+    email: String
+  ): Profile
 }
 `;
