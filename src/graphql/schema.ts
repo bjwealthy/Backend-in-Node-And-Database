@@ -10,6 +10,7 @@ type Profile {
 
 type Query {
   profile(id: ID): Profile
+  profileEmail(email: String): Profile
   profiles: [Profile!]
 }
 

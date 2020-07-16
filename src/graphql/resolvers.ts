@@ -12,6 +12,10 @@ export const resolvers = {
     profile: async (root: any, args: { id: number }) => {
       const profile = await Queries.getUserProfileById(args.id);
       return profile;
+    },
+    profileEmail: async (root: any, args: { email: string }) => {
+      const profile = await Queries.getUserProfileByEmail(args.email);
+      return profile;
     }
   },
 
