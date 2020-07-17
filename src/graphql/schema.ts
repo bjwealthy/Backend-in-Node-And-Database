@@ -28,5 +28,18 @@ type Mutation {
   deleteProfileByEmail(
     email: String
   ): Profile
+
+  editProfileById(
+    id: ID
+    name: String
+    email: String
+    phone: String
+  ): Profile
+
+  editProfileByEmail(
+    email: String
+    name: String
+    phone: String
+  ): Profile
 }
 `;
