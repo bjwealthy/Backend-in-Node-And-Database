@@ -1,6 +1,6 @@
 import knex from '../../config/knex';
 
-export const Queries = {
+export const UserProfileQueries = {
   getAllUserProfiles: async () => {
     const userProfiles = await knex('userProfile');
     return userProfiles
