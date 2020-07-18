@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express from 'express';
 import logger from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -8,7 +8,7 @@ import { resolvers } from './graphql/resolvers';
 import { typeDefs } from './graphql/schema';
 
 
-const app: Application = express();
+const app = express();
 
 app.use(helmet());
 app.use(logger('dev'));
@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 
-const apolloServer: ApolloServer = new ApolloServer({ typeDefs, resolvers });
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
 apolloServer.applyMiddleware({ app, path: "/graphql" });
 
 const port = process.env.PORT || 5000;
