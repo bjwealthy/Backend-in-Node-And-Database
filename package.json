@@ -2,7 +2,7 @@
   "name": "backend-in-node-and-database",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "src/server.ts",
+  "main": "lib/server.js",
   "repository": "https://github.com/upathorg/Backend-in-Node-And-Database.git/",
   "scripts": {
     "clean": "rm -rf lib/*",
@@ -10,6 +10,12 @@
     "dev": "nodemon",
     "1dev": "nodemon --exec ts-node lib/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=10.14.1"
   },
   "dependencies": {
     "apollo-server-express": "^2.15.1",
