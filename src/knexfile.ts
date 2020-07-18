@@ -12,6 +12,21 @@ export default {
     },
     useNullAsDefault: true
   },
+  production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: __dirname + '/src/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/src/seeds'
+    },
+    useNullAsDefault: true,
+    pool: {
+      min: 2,
+      max: 5,
+    },
+  },
 
   // test: {
   //   client: 'pg',
