@@ -10,6 +10,7 @@ type Profile {
 
 type Query {
   profile(id: ID): Profile
+  profileEmail(email: String): Profile
   profiles: [Profile!]
 }
 
@@ -19,5 +20,26 @@ type Mutation {
     email: String
     phone: String
   ): Profile!
+
+  deleteProfileById(
+    id: ID
+  ): Profile
+
+  deleteProfileByEmail(
+    email: String
+  ): Profile
+
+  editProfileById(
+    id: ID
+    name: String
+    email: String
+    phone: String
+  ): Profile
+
+  editProfileByEmail(
+    email: String
+    name: String
+    phone: String
+  ): Profile
 }
 `;

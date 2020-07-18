@@ -15,21 +15,6 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-/* --- Activate if you need a RESTful api Setup AND Disable ApollosServer
-
-import routes from './endpoints/routes';
-
-app.use('/upathlearning', routes);
-
-app.use('/upathlearning', (req, res) => {
-  res.send('Welcome to UPATH')
-})
-
-app.all('/*', (req, res) => {
-  res.send('Path cannot be reached');
-});
-
-*/
 
 const apolloServer: ApolloServer = new ApolloServer({ typeDefs, resolvers });
 apolloServer.applyMiddleware({ app, path: "/graphql" });
