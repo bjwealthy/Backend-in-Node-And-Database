@@ -1,14 +1,15 @@
 // Update with your config settings.
+require('dotenv').config();
 
-export default {
+export = {
   development: {
     client: "pg",
     connection: 'postgres://localhost/upathlearning',
     migrations: {
-      directory: __dirname + '/src/migrations',
+      directory: `${__dirname}/migrations`,
     },
     seeds: {
-      directory: __dirname + '/src/seeds'
+      directory: `${__dirname}/seeds`
     },
     useNullAsDefault: true
   },
@@ -16,10 +17,10 @@ export default {
     client: "pg",
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: __dirname + '/src/migrations',
+      directory: `${__dirname}/migrations`,
     },
     seeds: {
-      directory: __dirname + '/src/seeds'
+      directory: `${__dirname}/seeds`,
     },
     useNullAsDefault: true,
     pool: {
